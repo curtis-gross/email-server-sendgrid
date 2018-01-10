@@ -8,7 +8,7 @@ git push heroku master
 
 
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey= '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';
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 var express = require('express');
 var bodyParser = require('body-parser');
