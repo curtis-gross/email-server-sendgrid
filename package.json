@@ -1,0 +1,27 @@
+{
+  "name": "sendgrid-legit",
+  "version": "1.0.0",
+  "description": "service that listens for POST and sends emails based on received values.",
+  "main": "email_demo_engine.js",
+  "dependencies": {
+    "@sendgrid/mail": "^6.1.4",
+    "body-parser": "^1.18.2",
+    "connect": "^3.6.5",
+    "express": "^4.16.2",
+    "fs": "^0.0.1-security",
+    "mongoose": "^4.13.9"
+  },
+  "devDependencies": {
+  	"@sendgrid/mail": "^6.1.4",
+    "body-parser": "^1.18.2",
+    "connect": "^3.6.5",
+    "express": "^4.16.2",
+    "fs": "^0.0.1-security",
+    "mongoose": "^4.13.9"},
+  "scripts": {
+    "install": "npm install --save @sendgrid/mail",
+    "start": "node server.js"
+  },
+  "author": "curtis gross",
+  "license": "ISC"
+}
