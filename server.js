@@ -24,11 +24,10 @@ server = http.createServer( function(req, res) {
     //console.dir(req.param);
 
     if (req.method == 'POST') {
-        console.log("POST");
+        console.log("POST Received!");
         var body = '';
         req.on('data', function (data) {
             body += data;
-            console.log("Partial body: " + body);
         req.on('end', function () {
             console.log("Body: " + body);
         });
@@ -51,13 +50,12 @@ server = http.createServer( function(req, res) {
             
         });
        
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.end('post received');
+        //res.writeHead(200, {'Content-Type': 'text/html'});
+       // res.end('post received');
         
 	}
 	
 });
-server.listen(0)
-
+server.listen(process.env.PORT)
 console.log('listening on Port ' + process.env.PORT);
 
