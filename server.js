@@ -52,10 +52,10 @@ server = http.createServer( function(req, res) {
         res.end('post received');
         
 	}
-
+	
 });
 
-port = 80;
+port = 3030;
 host = '127.0.0.1';
 server.listen(port, host);
 console.log('Listening at http://' + host + ':' + port);
