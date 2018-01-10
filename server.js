@@ -15,8 +15,10 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var fs = require('fs');
 
-
+console.log("begin startup");
 server = http.createServer( function(req, res) {
+	 console.log("entered into server setup");
+	 
 	 res.setHeader('Access-Control-Allow-Origin', '*');
 
     // Request methods you wish to allow
@@ -63,8 +65,5 @@ server = http.createServer( function(req, res) {
 	}
 	
 });
-
-
-//host = '127.0.0.1';
 server.listen(process.env.PORT)
 console.log('listening on Port ' + process.env.PORT);
