@@ -1,5 +1,5 @@
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(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);
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -55,7 +55,7 @@ server = http.createServer( function(req, res) {
 	
 });
 
-port = (process.env.PORT || 3000);
+//port = (process.env.PORT || 3000);
 host = '127.0.0.1';
-server.listen(port, host);
+server.listen(process.env.PORT, host);
 console.log('Listening at http://' + host + ':' + port);
