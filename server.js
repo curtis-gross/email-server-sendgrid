@@ -14,6 +14,7 @@ var http = require('http');
 var fs = require('fs');
 
 console.log("begin startup");
+
 server = http.createServer( function(req, res) {
 	 console.log("entered into server setup");
 	 
@@ -50,7 +51,8 @@ server = http.createServer( function(req, res) {
 			  text: 'Welcome to Ticly, ' + body + ' we appreciate your signup.',
 			  html: '<h3>Welcome to Ticly</h3>' + body + ' we appreciate your signup.'
 			};
-			console.log(msg + "end message");
+			console.log("about to send email");
+			console.log(msg);
 			console.log(body + ' successfully emailed');
 			//attempt to send message and catch any errors if there is a failure
 			sgMail.send(msg).catch(function () {
@@ -66,5 +68,7 @@ server = http.createServer( function(req, res) {
 	}
 	
 });
-server.listen(process.env.PORT)
+server.listen(0)
+
 console.log('listening on Port ' + process.env.PORT);
+
