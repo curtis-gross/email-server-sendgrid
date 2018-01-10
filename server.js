@@ -55,7 +55,7 @@ server = http.createServer( function(req, res) {
 	
 });
 
-//port = (process.env.PORT || 3000);
+port = process.env.PORT;
 host = '127.0.0.1';
-server.listen(process.env.PORT, host);
+server.listen(port, host);
 console.log('Listening at http://' + host + ':' + port);
