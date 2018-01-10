@@ -5,8 +5,6 @@ git push heroku master
     
     */
 
-
-
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
@@ -41,7 +39,10 @@ server = http.createServer( function(req, res) {
         req.on('data', function (data) {
             body += data;
             console.log("Partial body: " + body);
-            
+        req.on('end', function () {
+            console.log("Body: " + body);
+        });
+      
             const msg = {
 			  to: body,
 			  from: 'noreply@lytics.com',
@@ -49,7 +50,7 @@ server = http.createServer( function(req, res) {
 			  text: 'Welcome to Ticly, ' + body + ' we appreciate your signup.',
 			  html: '<h3>Welcome to Ticly</h3>' + body + ' we appreciate your signup.'
 			};
-			console.log(msg);
+			console.log(msg + "end message");
 			console.log(body + ' successfully emailed');
 			//attempt to send message and catch any errors if there is a failure
 			sgMail.send(msg).catch(function () {
