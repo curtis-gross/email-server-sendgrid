@@ -1,6 +1,6 @@
 /* 
 git add server.js 
-git commit -m "updated port binding"
+git commit -m "updated vars"
 git push heroku master 
     
     */
