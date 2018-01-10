@@ -1,3 +1,12 @@
+/* 
+git add server.js 
+git commit -m "updated port binding"
+git push heroku master 
+    
+    */
+
+
+
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey= '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';
 
