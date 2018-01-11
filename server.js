@@ -1,6 +1,6 @@
 /* 
 git add server.js 
-git commit -m "updated vars"
+git commit -m "trimmed code"
 git push heroku master 
     
     */
@@ -36,7 +36,9 @@ server = http.createServer( function(req, res) {
 			  from: 'noreply@lytics.com',
 			  subject: 'Welcome to Ticly',
 			  text: 'Welcome to Ticly, ' + body + ' we appreciate your signup.',
-			  html: '<h3>Welcome to Ticly</h3>' + body + ' we appreciate your signup.'
+			 // html: '<h3>Welcome to Ticly</h3>' + body + ' we appreciate your signup.',
+			  content: '[{"type": "text/plain","value": "Heya!"}]',
+			  template_id: '1138a7de-83f3-40de-a95e-ded29e89cddd'
 			};
 			console.log("about to send email");
 			console.log(msg);
@@ -55,3 +57,5 @@ server = http.createServer( function(req, res) {
 server.listen(process.env.PORT)
 console.log('listening on Port ' + process.env.PORT);
 
+//sendgrid template id : 1138a7de-83f3-40de-a95e-ded29e89cddd
+//
