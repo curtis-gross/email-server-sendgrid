@@ -33,12 +33,13 @@ server = http.createServer( function(req, res) {
       
             const msg = {
 			  to: body,
-			  from: 'noreply@lytics.com',
+			  from: 'test-no-reply@ticly.com',
 			  subject: 'Welcome to Ticly',
 			  text: 'Welcome to Ticly, ' + body + ' we appreciate your signup.',
-			 // html: '<h3>Welcome to Ticly</h3>' + body + ' we appreciate your signup.',
-			  content: '[{"type": "text/plain","value": "Heya!"}]',
-			  template_id: '1138a7de-83f3-40de-a95e-ded29e89cddd'
+			  html: '<h3>Welcome to Ticly</h3>' + body + ' we appreciate your signup.',
+			  type: 'text/plain',
+			  value: 'heya!',
+			  template_id: '2ec278d7-85c5-4329-9bf5-3fc5b27238e3'
 			};
 			console.log("about to send email");
 			console.log(msg);
