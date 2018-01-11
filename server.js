@@ -6,7 +6,7 @@ git push heroku master
     */
 
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -20,8 +20,7 @@ server = http.createServer( function(req, res) {
 	res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    //res.setHeader('Access-Control-Allow-Credentials', true);
-    //console.dir(req.param);
+
 
     if (req.method == 'POST') {
         console.log("POST Received!");
@@ -49,9 +48,6 @@ server = http.createServer( function(req, res) {
 		console.log("Awaiting next email");
             
         });
-       
-        //res.writeHead(200, {'Content-Type': 'text/html'});
-       // res.end('post received');
         
 	}
 	
